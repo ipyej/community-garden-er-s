@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'TNR-Bold-Cond';
+    src: url('../fnt/TNR-MT-Cond/TimesNewRomanMT-BoldCond.woff') format('woff'),
+         url('../fnt/TNR-MT-Cond/TimesNewRomanMT-BoldCond.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TNR-Cond';
+    src: url('../fnt/TNR-MT-Cond/TimesNewRomanMT-Cond.woff') format('woff'),
+         url('../fnt/TNR-MT-Cond/TimesNewRomanMT-Cond.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TNR-Cond-Italic';
+    src: url('../fnt/TNR-MT-Cond/TimesNewRomanMT-CondItalic.woff') format('woff'),
+         url('../fnt/TNR-MT-Cond/TimesNewRomanMT-CondItalic.ttf') format('truetype');
+}
+
+html,
+body,
+.garden {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    background-color: rgba(0,0,0,1);
+    color: rgba(0,151,69,1);
+    font-family: 'TNR-Bold-Cond', 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    letter-spacing: 0.75px;
+    line-height: 1;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    perspective: 6000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.postcard {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.postcard.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Position the front and back side */
+#postcard-front, 
+#postcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden !important; /* Safari */
+    backface-visibility: hidden !important;
+}
+  
+/* Style the front side (fallback if image is missing) */
+#postcard-front {
+    display: block;
+    background-color: rgba(252,250,243,1);
+}
+  
+/* Style the back side */
+#postcard-back {
+    display: block;
+    background-color: rgba(252,250,243,1);
+    transform: rotateY(-180deg);
+} 
+
+#note-front {
+    z-index: -999;
+    position: static;
+    display: block;
+    padding: 1em;
+    font-size: 2.1em;
+    overflow: scroll;
+    margin: 0 auto;
+    color: rgba(0,0,0,1);
+/*  column-count: 2;
+    column-gap: 1.5em;  */
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+#photo-front {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/photo/Postcard-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#note-back {
+    z-index: 16777271;
+    position: absolute;
+    display: block;
+    padding: 1em;
+    font-size: 2.1em;
+    overflow: scroll;
+    margin: 0 auto;
+    color: rgba(252,250,243,1);
+}
+
+#photo-back {
+    z-index: 999;
+    position: static;
+    top: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/photo/Postcard-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+#sprinkle {
+    z-index: 16777271;
+    position: absolute;
+    padding: 1em;
+    background: rgba(0,0,0,0);
+}
+
+/* Mobile
+-------------------------------------------------- */
+
+
+@media (max-width: 1680px) {
+    #note-front,
+    #note-back {
+        column-count: 1;
+        font-size: 1.68em;
+    }
+}
+
+@media (max-width: 1095px) {
+    #note-front,
+    #note-back {
+        column-count: 1;
+        font-size: 1.05em;
+    }
+}
+
+  
