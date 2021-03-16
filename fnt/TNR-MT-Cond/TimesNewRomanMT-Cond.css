@@ -1,0 +1,12 @@
+/* Webfont: TimesNewRomanMT-Cond */@font-face {
+    font-family: 'TimesNewRomanMTCond';
+    src: url('TimesNewRomanMT-Cond.eot'); /* IE9 Compat Modes */
+    src: url('TimesNewRomanMT-Cond.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('TimesNewRomanMT-Cond.woff') format('woff'), /* Modern Browsers */
+         url('TimesNewRomanMT-Cond.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('TimesNewRomanMT-Cond.svg#TimesNewRomanMT-Cond') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
